@@ -24,7 +24,7 @@ class TestArticlesAPI:
     def test_get_articles_with_invalid_query(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "q": "",  # Пустой запрос, должен вернуть ошибку
+            "q": "",
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
 
@@ -34,7 +34,7 @@ class TestArticlesAPI:
     def test_get_second_page_of_articles(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "q": "Crypto",  # Замените на свой запрос
+            "q": "Crypto",
             "sort": "newest",
             "page": 2
         }

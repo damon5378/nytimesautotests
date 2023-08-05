@@ -11,11 +11,11 @@ class TestMoviesAPI:
     def test_get_movies(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "query": "Spider-Man",  # Замените на свой запрос
+            "query": "Spider-Man",
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
 
         assert response.status_code == 200
         assert "results" in response.json()
 
-    # Добавьте дополнительные тесты, если необходимо
+

@@ -2,7 +2,7 @@ from selenium import webdriver
 import pytest
 import requests
 
-API_KEY = "3iElcEAbAjbQuSzc3jRJtU8JVTnA7x5g"  # Замените на свой API ключ
+API_KEY = "3iElcEAbAjbQuSzc3jRJtU8JVTnA7x5g"
 
 BASE_URL_API = "https://api.nytimes.com/svc/"
 

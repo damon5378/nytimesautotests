@@ -11,7 +11,7 @@ class TestArticlesAPI:
     def test_get_articles(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "q": "Python",  # Замените на свой запрос
+            "q": "Python",
             "sort": "newest"
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
@@ -20,4 +20,4 @@ class TestArticlesAPI:
         assert "response" in response.json()
         assert "docs" in response.json()["response"]
 
-    # Добавьте дополнительные тесты, если необходимо
+

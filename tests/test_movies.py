@@ -12,7 +12,7 @@ class TestMoviesAPI:
     def test_get_movies(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "query": "Spider-Man",  # Замените на свой запрос
+            "query": "Spider-Man",
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
 
@@ -22,7 +22,7 @@ class TestMoviesAPI:
     def test_get_movies_with_invalid_query(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "query": "",  # Пустой запрос, должен вернуть ошибку
+            "query": "",
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
 
@@ -32,7 +32,7 @@ class TestMoviesAPI:
     def test_get_second_page_of_movies(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "query": "Spider-Man",  # Замените на свой запрос
+            "query": "Spider-Man",
             "offset": 20,
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
@@ -43,8 +43,8 @@ class TestMoviesAPI:
     def test_search_with_invalid_rating(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "query": "Spider-Man",  # Замените на свой запрос
-            "mpaa_rating": "invalid_rating",  # Неверный рейтинг, должен вернуть ошибку
+            "query": "Spider-Man",
+            "mpaa_rating": "invalid_rating",
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
 
@@ -54,7 +54,7 @@ class TestMoviesAPI:
     def test_search_with_empty_result(self, session, api_key, api_base_url):
         params = {
             "api-key": api_key,
-            "query": "SomeRandomMovieTitle",  # Несуществующий фильм, должен вернуть пустой результат
+            "query": "SomeRandomMovieTitle",
         }
         response = session.get(f"{api_base_url}{self.endpoint}", params=params)
 
